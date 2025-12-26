@@ -26,7 +26,7 @@ export default function RootLayout({
 
                     }}
                 >
-                    <main className="flex-1 overflow-y-auto pb-16  scrollbar-hide ">
+                    <main className="flex-1 overflow-y-auto scrollbar-hide ">
                     <Header />
 
                         {children}

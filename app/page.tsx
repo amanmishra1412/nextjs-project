@@ -223,7 +223,7 @@ const Page = () => {
                                 <div
                                     className={`relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br ${item.backgroundGradient}`}
                                 >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-2">
                                         <div className="w-[35%] relative h-64 md:h-80 shrink-0">
                                             <Image
                                                 src={item.imageUrl}
@@ -233,7 +233,7 @@ const Page = () => {
                                             />
                                         </div>
 
-                                        <div className=" pr-4 text-right">
+                                        <div className="flex flex-col items-center pr-4 text-right">
                                             <h2 className="text-3xl text-right font-semibold mb-4">
                                                 {item.title}
                                             </h2>
@@ -241,7 +241,7 @@ const Page = () => {
                                                 {item.subtitle}
                                             </p>
 
-                                            <button className="mt-12 px-5 py-3 bg-gray-900 text-white font-semibold rounded-full ">
+                                            <button className="mt-5 ml-auto px-5 py-3 bg-gray-900 text-white font-semibold rounded-full ">
                                                 Know More
                                             </button>
                                         </div>
@@ -396,7 +396,7 @@ const Page = () => {
 
             {/* review */}
 
-            <section className="pb-5">
+            <section className="mb-20 pb-5">
                 <div className="flex ml-5 pr-5 justify-between items-center">
                     <h2 className="font-semibold">
                         <span className="text-lg">Reviews</span>{" "}
