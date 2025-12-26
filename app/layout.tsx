@@ -22,7 +22,7 @@ export default function RootLayout({
                 <div
                     className="flex flex-col relative h-screen rounded-3xl "
                     style={{
-                        background: "linear-gradient(to bottom, #DEF4F7 0%, #FFFFFF 35%, #FFFFFF 75%, #DFFAFE 100%)"
+                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 75%, #DFFAFE 100%)"
 
                     }}
                 >

@@ -59,9 +59,9 @@ const Page = () => {
 
     const quickActions: QuickAction[] = [
         { icon: "ri-user-line", title: "Dr.", subtitle: "Anuj Pall" },
-        { icon: "ri-calendar-line", title: "Book Appointment", btn: 'true' },
+        { icon: "ri-calendar-line", title: "Book Appointment", btn: "true" },
         { icon: "ri-customer-service-line", title: "Online Consultation" },
-        { icon: "ri-capsule-line", title: "Buy Medicine" },
+        { icon: "ri-capsule-line", title: "Buy ", subtitle: "Medicine" },
     ];
 
     const premiumServices: PremiumService[] = [
@@ -75,7 +75,7 @@ const Page = () => {
         {
             name: "Facebook",
             icon: "ri-facebook-line",
-            className: "bg-[#E7F0FF] text-blue-600",
+            className: "bg-[#C5E3F6] text-blue-600",
         },
         {
             name: "Instagram",
@@ -85,7 +85,7 @@ const Page = () => {
         {
             name: "X (twitter)",
             icon: "ri-twitter-x-line",
-            className: "bg-[#EEEEEE]",
+            className: "bg-[#CAE1E4]",
         },
     ];
 
@@ -150,10 +150,10 @@ const Page = () => {
 
     return (
         <>
-        {/* quick action start */}
+            {/* quick action start */}
             <section className="pb-5 px-5">
-                <div className="greeting mt-2">
-                    <h2 className="text-2xl font-semibold">Hello Akash!</h2>
+                <div className="greeting">
+                    <h2 className="text-3xl font-semibold">Hello Akash!</h2>
                     <p className="text-gray-700">Lorem, ipsum</p>
                 </div>
                 <div className="mt-3 grid grid-cols-2 gap-4">
@@ -165,9 +165,11 @@ const Page = () => {
                                     ? () => setAppointment(true)
                                     : undefined
                             }
-                            className="bg-white cursor-pointer rounded-2xl shadow-md px-4 py-2 flex gap-3 items-center active:scale-95 transition-all"
+                            className="bg-gradient-to-tr from-[#F9F9F9] to-white cursor-pointer rounded-2xl shadow-lg px-2 py-1 flex gap-3 items-center active:scale-95 transition-all"
                         >
-                            <i className={`${item.icon} text-blue-500`} />
+                            <div className="bg-white flex items-center justify-center relative rounded-xl shadow-sm cursor-pointer w-10 h-10 text-xl text-black">
+                                <i className={`${item.icon} text-[#8ECAD2]`} />
+                            </div>
                             <p className=" font-medium text-start text-gray-900">
                                 {item.title}
                                 {item.subtitle && (
@@ -184,8 +186,8 @@ const Page = () => {
 
             {/* premium service */}
 
-            <section className="pb-5 px-5">
-                <h2 className="font-semibold">
+            <section className="pb-5">
+                <h2 className="font-semibold px-5">
                     Premium Services
                     <span className="text-yellow-500 text-lg">✨</span>
                 </h2>
@@ -193,7 +195,7 @@ const Page = () => {
                     {premiumServices.map((item, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 w-24 flex flex-col items-center justify-center"
+                            className={`flex-shrink-0 ${i === 0 ? 'ml-5' : i ===  premiumServices.length - 1 ? 'mr-5' : ''} w-24 flex flex-col items-center justify-center`}
                         >
                             <div className="w-16 h-16 relative rounded-full bg-white">
                                 <Image
@@ -214,7 +216,7 @@ const Page = () => {
             {/* carousel */}
             <section className="pb-5 flex justify-center">
                 <div className="w-[90%] max-w-2xl">
-                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3 pb-8">
+                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3">
                         {carouselData.map((item, index) => (
                             <div
                                 key={index}
@@ -234,14 +236,16 @@ const Page = () => {
                                         </div>
 
                                         <div className="flex flex-col items-center pr-4 text-right">
-                                            <h2 className="text-3xl text-right font-semibold mb-4">
+                                            <div className="mb-8">
+                                                <h2 className="text-3xl text-right font-semibold mb-4">
                                                 {item.title}
                                             </h2>
                                             <p className="text-right">
                                                 {item.subtitle}
                                             </p>
+                                            </div>
 
-                                            <button className="mt-5 ml-auto px-5 py-3 bg-gray-900 text-white font-semibold rounded-full ">
+                                            <button className="mt-auto ml-auto px-5 py-3 bg-gray-900 text-white font-semibold rounded-full ">
                                                 Know More
                                             </button>
                                         </div>
@@ -266,13 +270,13 @@ const Page = () => {
 
             <section className="pb-5 px-5">
                 <p className="text-lg font-medium text-gray-800 mb-4 flex items-center gap-2">
-                    Let be social <span className="text-2xl">🚀</span>
+                    Let be social 🚀
                 </p>
                 <div className="flex overflow-x-auto mt-1 gap-2 scrollbar-hide">
                     {socialLinks.map((item, i) => (
                         <button
                             key={i}
-                            className={`flex-shrink-0 px-3 py-2 rounded-lg flex items-center gap-2 font-medium transition ${item.className}`}
+                            className={`flex-shrink-0 px-3 py-2 rounded-xl flex items-center gap-2 font-medium transition ${item.className}`}
                         >
                             <span>{item.name}</span>
                             <i className={item.icon} />
@@ -295,7 +299,7 @@ const Page = () => {
                     {services.map((service, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 ml-5 w-32 bg-[#FBF6E3] rounded-2xl shadow-lg"
+                            className="flex-shrink-0 ml-5 w-32 bg-[#F0F4E2] rounded-2xl"
                         >
                             <div className="px-2 pt-2">
                                 <h3>{service.title}</h3>
@@ -316,16 +320,16 @@ const Page = () => {
             {/* video */}
 
             <section className="pb-5">
-                <div className="w-full bg-white py-6">
+                <div className="w-full py-6">
                     <div className="flex items-center gap-3 px-6 mb-5">
                         <h2 className="text-xl font-semibold text-gray-900">
                             Watch Videos
                         </h2>
                     </div>
-                    <div className="overflow-x-auto scrollbar-hide px-6">
-                        <div className="flex gap-4 pb-4">
+                    <div className="overflow-x-auto scrollbar-hide">
+                        <div className="flex gap-3 pb-4">
                             {videos.map((video, i) => (
-                                <div key={i} className="flex-shrink-0 w-48">
+                                <div key={i} className={`flex-shrink-0 w-48 ${i === 0 ? 'ml-5' : i ===  videos.length - 1 ? 'mr-5' : ''}`}>
                                     <div className="bg-gray-200 relative rounded-2xl overflow-hidden shadow-md">
                                         <div className="aspect-[9/16] relative">
                                             <Image
@@ -361,27 +365,27 @@ const Page = () => {
                     </Link>
                 </div>
 
-                <div className="flex overflow-x-auto scrollbar-hide pb-4">
+                <div className="flex overflow-x-auto mt-2 gap-2 scrollbar-hide pb-4">
                     {beforeAfterCards.map((item, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 ml-5 p-4 w-56 bg-white rounded-xl shadow-md"
+                            className={`flex-shrink-0 ${i === 0 ? 'ml-5' : i ===  beforeAfterCards.length - 1 ? 'mr-5' : ''} p-[10px] w-52 bg-white rounded-2xl shadow-xl`}
                         >
                             <div className="relative h-28 rounded-xl">
                                 <Image
                                     fill
                                     src={item.image}
                                     alt={item.title}
-                                    className="object-cover rounded-xl"
+                                    className="object-cover rounded-2xl"
                                 />
                             </div>
 
                             <h3 className="text-xl font-bold mt-2">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600">{item.description}</p>
+                            <p className="text-gray-600 leading-0">{item.description}</p>
 
-                            <hr className="my-3 h-[2px] bg-gradient-to-r from-transparent via-[#52B8C5] to-transparent" />
+                            <hr className="my-1 h-[2px] bg-gradient-to-r from-transparent via-[#52B8C5] to-transparent" />
 
                             <div className="flex items-center gap-2">
                                 <i className="ri-checkbox-circle-fill text-green-500 text-2xl" />
@@ -396,7 +400,7 @@ const Page = () => {
 
             {/* review */}
 
-            <section className="mb-20 pb-5">
+            <section className="mb-16 pb-5">
                 <div className="flex ml-5 pr-5 justify-between items-center">
                     <h2 className="font-semibold">
                         <span className="text-lg">Reviews</span>{" "}
@@ -409,11 +413,11 @@ const Page = () => {
                         View All
                     </Link>
                 </div>
-                <div className="flex mt-1 pl-5 gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                <div className="flex mt-2 gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
                     {reviews.map((item, i) => (
                         <div
                             key={i}
-                            className="w-[90%] flex-shrink-0 snap-center bg-[#F3FEFF] rounded-xl border border-[#D9FBFF] p-4"
+                            className={`w-[90%] ${i === 0 ? 'ml-5' : i ===  reviews.length - 1 ? 'mr-5' : ''} flex-shrink-0 snap-center bg-[#F3FEFF] rounded-xl border border-[#D9FBFF] p-4`}
                         >
                             <div className="flex items-center gap-3">
                                 <Image

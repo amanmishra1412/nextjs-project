@@ -28,7 +28,7 @@ const Header = () => {
     return (
         <>
           
-                <header className="py-5 px-5">
+                <header className="pt-5 pb-3 px-5">
                     {pathname !== "/" ? (
                         <TopHeader />
                     ) : (
