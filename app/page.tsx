@@ -122,7 +122,7 @@ const Page = () => {
             imageUrl: "/images/serviceuser2.png",
             title: "Face & Skin Rejuvenation",
             subtitle: "Revitalize, refresh and restore your natural beauty",
-            backgroundGradient: "from-orange-300 via-yellow-200 to-orange-400",
+            backgroundGradient: "from-[#FED9AB] via-[#FFE1B9] to-[#FDBF69]",
         },
         {
             imageUrl: "/images/serviceuser2.png",
