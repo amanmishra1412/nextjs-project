@@ -56,6 +56,14 @@ interface CarouselItem {
 
 const Page = () => {
     const [appointment, setAppointment] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+        const scrollLeft = e.currentTarget.scrollLeft;
+        const width = e.currentTarget.clientWidth;
+        const index = Math.round(scrollLeft / width);
+        setActiveIndex(index);
+    };
 
     const quickActions: QuickAction[] = [
         { icon: "ri-user-line", title: "Dr.", subtitle: "Anuj Pall" },
@@ -165,12 +173,12 @@ const Page = () => {
                                     ? () => setAppointment(true)
                                     : undefined
                             }
-                            className="bg-gradient-to-tr from-[#F9F9F9] to-white cursor-pointer rounded-2xl shadow-lg px-2 py-1 flex gap-3 items-center active:scale-95 transition-all"
+                            className="bg-gradient-to-tr  from-[#F9F9F9] to-white cursor-pointer rounded-2xl shadow-lg px-2 py-1 flex gap-1 items-center active:scale-95 transition-all"
                         >
-                            <div className="bg-white flex items-center justify-center relative rounded-xl shadow-sm cursor-pointer w-10 h-10 text-xl text-black">
+                            <div className="bg-white shrink-0 flex items-center justify-center relative rounded-xl shadow-sm cursor-pointer w-10 h-10 text-xl text-black">
                                 <i className={`${item.icon} text-[#8ECAD2]`} />
                             </div>
-                            <p className=" font-medium text-start text-gray-900">
+                            <p className=" font-medium  text-start text-gray-900">
                                 {item.title}
                                 {item.subtitle && (
                                     <>
@@ -195,7 +203,13 @@ const Page = () => {
                     {premiumServices.map((item, i) => (
                         <div
                             key={i}
-                            className={`flex-shrink-0 ${i === 0 ? 'ml-5' : i ===  premiumServices.length - 1 ? 'mr-5' : ''} w-24 flex flex-col items-center justify-center`}
+                            className={`flex-shrink-0 ${
+                                i === 0
+                                    ? "ml-5"
+                                    : i === premiumServices.length - 1
+                                    ? "mr-5"
+                                    : ""
+                            } w-24 flex flex-col items-center justify-center`}
                         >
                             <div className="w-16 h-16 relative rounded-full bg-white">
                                 <Image
@@ -216,7 +230,12 @@ const Page = () => {
             {/* carousel */}
             <section className="pb-5 flex justify-center">
                 <div className="w-[90%] max-w-2xl">
-                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3">
+                    <div
+                        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
+                        onScroll={(e) => {
+                            handleScroll(e);
+                        }}
+                    >
                         {carouselData.map((item, index) => (
                             <div
                                 key={index}
@@ -226,7 +245,7 @@ const Page = () => {
                                     className={`relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br ${item.backgroundGradient}`}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <div className="w-[35%] relative h-64 md:h-80 shrink-0">
+                                        <div className="w-[33%] relative h-64 shrink-0">
                                             <Image
                                                 src={item.imageUrl}
                                                 alt={item.title}
@@ -235,14 +254,14 @@ const Page = () => {
                                             />
                                         </div>
 
-                                        <div className="flex flex-col items-center pr-4 text-right">
+                                        <div className="flex justify-center pt-8 py-2 flex-col items-center pr-3 text-right">
                                             <div className="mb-8">
                                                 <h2 className="text-3xl text-right font-semibold mb-4">
-                                                {item.title}
-                                            </h2>
-                                            <p className="text-right">
-                                                {item.subtitle}
-                                            </p>
+                                                    {item.title}
+                                                </h2>
+                                                <p className="text-right">
+                                                    {item.subtitle}
+                                                </p>
                                             </div>
 
                                             <button className="mt-auto ml-auto px-5 py-3 bg-gray-900 text-white font-semibold rounded-full ">
@@ -259,7 +278,12 @@ const Page = () => {
                         {carouselData.map((_, index) => (
                             <div
                                 key={index}
-                                className="w-2 h-2 bg-gray-400 rounded-full opacity-50"
+                                className={`w-2 h-2 rounded-full transition-all duration-300
+                                ${
+                                    activeIndex === index
+                                        ? "bg-[#73D4E0] scale-125 opacity-100"
+                                        : "bg-gray-400 opacity-50"
+                                }`}
                             />
                         ))}
                     </div>
@@ -268,15 +292,23 @@ const Page = () => {
 
             {/* social */}
 
-            <section className="pb-5 px-5">
-                <p className="text-lg font-medium text-gray-800 mb-4 flex items-center gap-2">
+            <section className="pb-5 ">
+                <p className="text-lg px-5 font-medium text-gray-800 mb-4 flex items-center gap-2">
                     Let be social 🚀
                 </p>
                 <div className="flex overflow-x-auto mt-1 gap-2 scrollbar-hide">
                     {socialLinks.map((item, i) => (
                         <button
                             key={i}
-                            className={`flex-shrink-0 px-3 py-2 rounded-xl flex items-center gap-2 font-medium transition ${item.className}`}
+                            className={`flex-shrink-0 px-3 py-2 rounded-xl flex items-center gap-2 font-medium transition ${
+                                item.className
+                            } ${
+                                i === 0
+                                    ? "ml-5"
+                                    : i === socialLinks.length - 1
+                                    ? "mr-5"
+                                    : ""
+                            }`}
                         >
                             <span>{item.name}</span>
                             <i className={item.icon} />
@@ -329,7 +361,16 @@ const Page = () => {
                     <div className="overflow-x-auto scrollbar-hide">
                         <div className="flex gap-3 pb-4">
                             {videos.map((video, i) => (
-                                <div key={i} className={`flex-shrink-0 w-48 ${i === 0 ? 'ml-5' : i ===  videos.length - 1 ? 'mr-5' : ''}`}>
+                                <div
+                                    key={i}
+                                    className={`flex-shrink-0 w-48 ${
+                                        i === 0
+                                            ? "ml-5"
+                                            : i === videos.length - 1
+                                            ? "mr-5"
+                                            : ""
+                                    }`}
+                                >
                                     <div className="bg-gray-200 relative rounded-2xl overflow-hidden shadow-md">
                                         <div className="aspect-[9/16] relative">
                                             <Image
@@ -369,7 +410,13 @@ const Page = () => {
                     {beforeAfterCards.map((item, i) => (
                         <div
                             key={i}
-                            className={`flex-shrink-0 ${i === 0 ? 'ml-5' : i ===  beforeAfterCards.length - 1 ? 'mr-5' : ''} p-[10px] w-52 bg-white rounded-2xl shadow-xl`}
+                            className={`flex-shrink-0 ${
+                                i === 0
+                                    ? "ml-5"
+                                    : i === beforeAfterCards.length - 1
+                                    ? "mr-5"
+                                    : ""
+                            } p-[10px] w-52 bg-white rounded-2xl shadow-xl`}
                         >
                             <div className="relative h-28 rounded-xl">
                                 <Image
@@ -383,7 +430,9 @@ const Page = () => {
                             <h3 className="text-xl font-bold mt-2">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600 leading-0">{item.description}</p>
+                            <p className="text-gray-600 leading-0">
+                                {item.description}
+                            </p>
 
                             <hr className="my-1 h-[2px] bg-gradient-to-r from-transparent via-[#52B8C5] to-transparent" />
 
@@ -417,7 +466,13 @@ const Page = () => {
                     {reviews.map((item, i) => (
                         <div
                             key={i}
-                            className={`w-[90%] ${i === 0 ? 'ml-5' : i ===  reviews.length - 1 ? 'mr-5' : ''} flex-shrink-0 snap-center bg-[#F3FEFF] rounded-xl border border-[#D9FBFF] p-4`}
+                            className={`w-[90%] ${
+                                i === 0
+                                    ? "ml-5"
+                                    : i === reviews.length - 1
+                                    ? "mr-5"
+                                    : ""
+                            } flex-shrink-0 snap-center bg-[#F3FEFF] rounded-xl border border-[#D9FBFF] p-4`}
                         >
                             <div className="flex items-center gap-3">
                                 <Image
