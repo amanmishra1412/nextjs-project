@@ -73,11 +73,11 @@ const Header = () => {
                         onClick={() => setIsMenuOpen(false)}
                     />
 
-                    <div className="absolute rounded-3xl  overflow-hidden bg-[#EEFAFB] inset-y-0 left-0 w-[75%] shadow-2xl z-50 flex flex-col">
+                    <div className="absolute rounded-3xl overflow-hidden bg-[#EEFAFB] inset-y-0 left-0 w-[75%] shadow-2xl z-50 flex flex-col">
                         <div className=" border-b p-4  border-gray-100">
                             <div className="flex border border-[#A3DBE1] border-t-4 border-l-0 border-r-0 border-b-4 rounded-3xl p-4 bg-gradient-to-b from-[#DEF4F7] to-[#E2E7E0] flex-col gap-3">
                                 <div className="relative w-20 h-20 rounded-md overflow-hidden bg-gray-200">
-                                    <Image
+                                    <Image  
                                         src="/images/image.png"
                                         alt="Profile"
                                         fill
@@ -93,7 +93,7 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className="flex-1 px-4 overflow-y-auto scrollbar-hide">
+                        <div className="flex-1 mb-8 px-4 overflow-y-auto scrollbar-hide">
                             {menuItems.map((item, idx) => (
                                 <Link
                                     key={idx}

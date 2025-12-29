@@ -57,7 +57,7 @@ const Footer = () => {
     if (pathname.startsWith("/premium") || removeRoute.includes(pathname)) return "";
 
     return (
-        <div className="sticky self-end w-full px-3 bg-gradient-to-b rounded-3xl from-transparent to-[#D4F2F6]">
+        <div className=" sticky self-end bottom-1 h-[100px] w-full max-w-[420px] z-30 px-3 bg-gradient-to-b rounded-3xl from-transparent to-[#D4F2F6]">
             <footer className=" rounded-3xl bg-[#D4F2F6] border-[2px] border-white z-40">
                 <div className="flex justify-around items-center h-16 max-w-md mx-auto">
                     {tabs.map((tab) => {

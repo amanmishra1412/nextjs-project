@@ -14,8 +14,9 @@ const TopHeader = () => {
         profile: "Profile",
         pigmentation: "Pigmentation",
         my_visits: "My Visits",
+        service: "Services",
         about: "",
-        treatment_gallary : 'treatment gallary'
+        treatment_gallary: "treatment gallary",
     };
 
     const pathname = usePathname();
