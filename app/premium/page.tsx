@@ -42,7 +42,7 @@ const cardData: CardItem[] = [
 
 const Page = () => {
     return (
-        <div className="flex flex-col gap-3 px-5 w-full">
+        <div className="flex flex-col gap-3 pb-5 px-5 w-full">
             {cardData.map((item, idx) => (
                 <Link key={idx} href={item.href}>
                     <div className="bg-white rounded-3xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition">

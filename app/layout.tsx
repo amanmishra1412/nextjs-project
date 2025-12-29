@@ -17,12 +17,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={` antialiased mx-auto w-full md:bg-black max-w-[420px]`}
+                className={` antialiased mx-auto w-full md:bg-black md:max-w-[420px] font-noto-sans`}
             >
                 <div
                     className="flex flex-col relative h-screen rounded-3xl "
                     style={{
-                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 75%, #DFFAFE 100%)"
+                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 70%, #DFFAFE 100%)"
 
                     }}
                 >

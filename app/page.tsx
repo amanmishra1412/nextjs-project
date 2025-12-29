@@ -179,7 +179,7 @@ const Page = () => {
                             <div className="bg-white shrink-0 flex items-center justify-center relative rounded-xl shadow-sm cursor-pointer w-10 h-10 text-xl text-black">
                                 <i className={`${item.icon} text-[#8ECAD2]`} />
                             </div>
-                            <p className=" font-medium  text-start text-gray-900">
+                            <p className=" font-semibold  text-start">
                                 {item.title}
                                 {item.subtitle && (
                                     <>
