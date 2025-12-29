@@ -108,6 +108,7 @@ const Page = () => {
         { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
         { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
         { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
+        { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
     ];
 
     const beforeAfterCards: BeforeAfterCard[] = Array(3).fill({
@@ -142,17 +143,17 @@ const Page = () => {
         {
             title: "Get Rid of ACNE",
             subtitle: "Dr. Anuj Pall",
-            image: "/images/user1.png",
+            image: "/images/video2.png",
         },
         {
             title: "Skin care",
             subtitle: "Dr. Anuj Pall",
-            image: "/images/user1.png",
+            image: "/images/video.png",
         },
         {
             title: "Glow Treatment",
             subtitle: "Dr. Anuj Pall",
-            image: "/images/user1.png",
+            image: "/images/video.png",
         },
     ];
 
@@ -327,11 +328,17 @@ const Page = () => {
                     <Link href="/service">View All</Link>
                 </div>
 
-                <div className="flex mt-3 overflow-x-auto scrollbar-hide">
+                <div className="flex mt-3 gap-2 overflow-x-auto scrollbar-hide">
                     {services.map((service, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 ml-5 w-32 bg-[#F0F4E2] rounded-2xl"
+                            className={`flex-shrink-0 ${
+                                i === 0
+                                    ? "ml-5"
+                                    : i === services.length - 1
+                                    ? "mr-5"
+                                    : ""
+                            } w-32 bg-[#F0F4E2] rounded-2xl`}
                         >
                             <div className="px-2 pt-2">
                                 <h3>{service.title}</h3>
@@ -359,7 +366,7 @@ const Page = () => {
                         </h2>
                     </div>
                     <div className="overflow-x-auto scrollbar-hide">
-                        <div className="flex gap-3 pb-4">
+                        <div className="flex gap-2 pb-4">
                             {videos.map((video, i) => (
                                 <div
                                     key={i}
@@ -401,7 +408,10 @@ const Page = () => {
             <section className="pb-5">
                 <div className="flex px-5 justify-between">
                     <h2 className="font-semibold text-lg">Before And After</h2>
-                    <Link href="/treatment_gallary" className="text-blue-500">
+                    <Link
+                        href="/treatment_gallary"
+                        className="text-blue-500 font-normal"
+                    >
                         Go To Gallery
                     </Link>
                 </div>

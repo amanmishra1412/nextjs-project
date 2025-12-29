@@ -17,7 +17,7 @@ const Header = () => {
         { icon: "ri-history-line", label: "Appointment History" },
         { icon: "ri-vip-crown-line", label: "Premium Services", link:'/premium' },
         { icon: "ri-file-text-line", label: "Treatment Instructions", link:'/treatment' },
-        { icon: "ri-question-line", label: "FAQs" },
+        { icon: "ri-login-box-line", label: "Login", link:'/login' },
         { icon: "ri-message-2-line", label: "Feedback" },
         { icon: "ri-logout-box-r-line", label: "Logout" },
     ];
