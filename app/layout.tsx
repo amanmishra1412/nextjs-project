@@ -26,8 +26,8 @@ export default function RootLayout({
 
                     }}
                 >
-                    <main className="flex-1 overflow-y-auto scrollbar-hide ">
                     <Header />
+                    <main className="rounded-3xl overflow-y-auto scrollbar-hide ">
 
                         {children}
                     </main>
