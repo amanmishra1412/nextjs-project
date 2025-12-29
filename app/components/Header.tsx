@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="pt-5 pb-3 px-5">
+            <header className="pt-5  pb-3 px-5">
                 {pathname !== "/" ? (
                     <TopHeader />
                 ) : (
@@ -77,7 +77,7 @@ const Header = () => {
                         <div className=" border-b p-4  border-gray-100">
                             <div className="flex border border-[#A3DBE1] border-t-4 border-l-0 border-r-0 border-b-4 rounded-3xl p-4 bg-gradient-to-b from-[#DEF4F7] to-[#E2E7E0] flex-col gap-3">
                                 <div className="relative w-20 h-20 rounded-md overflow-hidden bg-gray-200">
-                                    <Image  
+                                    <Image
                                         src="/images/image.png"
                                         alt="Profile"
                                         fill

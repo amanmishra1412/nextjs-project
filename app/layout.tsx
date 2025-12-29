@@ -20,14 +20,14 @@ export default function RootLayout({
                 className={` antialiased mx-auto w-full md:bg-black md:max-w-[420px] font-noto-sans`}
             >
                 <div
-                    className="flex flex-col relative h-screen md:rounded-3xl pb-4"
+                    className="flex flex-col relative md:rounded-3xl pb-4"
                     style={{
-                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 70%, #DFFAFE 100%)"
-
+                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 70%, #DFFAFE 100%)",
+ height: "100vh",
                     }}
                 >
                     <Header />
-                    <main className="rounded-3xl overflow-y-auto scrollbar-hide ">
+                    <main className=" pb-[50px]  overflow-y-auto scrollbar-hide ">
 
                         {children}
                     </main>
