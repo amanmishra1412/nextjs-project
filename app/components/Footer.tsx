@@ -56,7 +56,7 @@ const Footer = () => {
     if (removeRoute.includes(pathname)) return "";
 
     return (
-        <div className="  sticky px-5 bottom-0 inset-x-0 bg-gradient-to-b h-[80px] to-white from-[#D4F2F6]">
+        <div className="sticky px-3 bottom-0 inset-x-0 bg-gradient-to-b h-[100px] from-transparent to-[#D4F2F6]">
             <footer className=" rounded-3xl bg-[#D4F2F6] border-[2px] border-white z-40">
                 <div className="flex justify-around items-center h-16 max-w-md mx-auto">
                     {tabs.map((tab) => {
