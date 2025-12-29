@@ -47,7 +47,7 @@ const Appointment = ({ valueAppoint }: Props) => {
                                     onChange={(e) =>
                                         setAppointmentType(e.target.value)
                                     }
-                                    className="accent-[#52B8C5]"
+                                    className="accent-[#3BE6FB] border-none border-transparent"
                                 />
                                 <span className="text-sm font-medium capitalize">
                                     {type}

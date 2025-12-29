@@ -243,15 +243,15 @@ const Page = () => {
                                 className="snap-center shrink-0 w-full max-w-md"
                             >
                                 <div
-                                    className={`relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br ${item.backgroundGradient}`}
+                                    className={`relative  h-[320px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br ${item.backgroundGradient}`}
                                 >
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-[33%] relative h-64 shrink-0">
+                                    <div className="flex justify-center h-full items-center gap-2">
+                                        <div className="w-[33%] relative h-full shrink-0">
                                             <Image
                                                 src={item.imageUrl}
                                                 alt={item.title}
                                                 fill
-                                                className="w-full rounded-2xl shadow-lg"
+                                                className="w-full object-cover rounded-2xl shadow-lg"
                                             />
                                         </div>
 
