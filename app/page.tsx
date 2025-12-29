@@ -459,7 +459,7 @@ const Page = () => {
 
             {/* review */}
 
-            <section className="mb-16 pb-5">
+            <section className=" pb-5">
                 <div className="flex ml-5 pr-5 justify-between items-center">
                     <h2 className="font-semibold">
                         <span className="text-lg">Reviews</span>{" "}
