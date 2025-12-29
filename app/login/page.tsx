@@ -34,7 +34,7 @@ const Page = () => {
     return (
         <>
             <div
-                className="h-screen bg-cover rounded-3xl bg-top bg-no-repeat"
+                className="h-screen bg-cover md:rounded-3xl bg-top bg-no-repeat"
                 style={{ backgroundImage: "url(/images/login.png)" }}
             />
 

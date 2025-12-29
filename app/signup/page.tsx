@@ -51,7 +51,7 @@ const Page = () => {
         <>
             {/* Background */}
             <div
-                className="h-screen rounded-3xl bg-cover bg-top bg-no-repeat"
+                className="h-screen md:rounded-3xl bg-cover bg-top bg-no-repeat"
                 style={{ backgroundImage: "url(/images/login.png)" }}
             />
 
