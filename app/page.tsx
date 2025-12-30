@@ -32,6 +32,7 @@ interface Review {
 interface Service {
     title: string;
     image: string;
+    className: string;
 }
 
 interface Video {
@@ -95,6 +96,11 @@ const Page = () => {
             icon: "ri-twitter-x-line",
             className: "bg-[#CAE1E4]",
         },
+        {
+            name: "Youtube",
+            icon: "ri-youtube-line",
+            className: "bg-[#FEE5EA] text-[#FE0B3D]",
+        },
     ];
 
     const reviews: Review[] = Array(3).fill({
@@ -105,10 +111,26 @@ const Page = () => {
     });
 
     const services: Service[] = [
-        { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
-        { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
-        { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
-        { title: "Skin Rejuvenation", image: "/images/serviceuser1.png" },
+        {
+            title: "Skin Rejuvenation",
+            image: "/images/serviceuser1.png",
+            className: "bg-[#FCF7E4]",
+        },
+        {
+            title: "Photo Facial",
+            image: "/images/servicefacial.png",
+            className: "bg-[#DDF1F6]",
+        },
+        {
+            title: "Botox",
+            image: "/images/serviceuser1.png",
+            className: "bg-[#D9ECE0]",
+        },
+        {
+            title: "Skin Rejuvenation",
+            image: "/images/serviceuser1.png",
+            className: "bg-[#ECD9EA]",
+        },
     ];
 
     const beforeAfterCards: BeforeAfterCard[] = Array(3).fill({
@@ -160,6 +182,7 @@ const Page = () => {
     return (
         <>
             {/* quick action start */}
+
             <section className="pb-5 px-5">
                 <div className="greeting">
                     <h2 className="text-3xl font-semibold">Hello Akash!</h2>
@@ -215,7 +238,7 @@ const Page = () => {
                             <div className="w-16 h-16 relative rounded-full bg-white">
                                 <Image
                                     fill
-                                    className="object-cover rounded-full"
+                                    className="object-cover w-full h-full rounded-full"
                                     src={item.image || "/images/image.png"}
                                     alt={item.label}
                                 />
@@ -229,10 +252,11 @@ const Page = () => {
             </section>
 
             {/* carousel */}
-            <section className="pb-5 flex justify-center">
-                <div className="w-[90%] max-w-2xl">
+
+            <section className="pb-5">
+                <div className=" max-w-2xl">
                     <div
-                        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3"
+                        className="flex overflow-x-auto px-5 snap-x snap-mandatory scrollbar-hide gap-3"
                         onScroll={(e) => {
                             handleScroll(e);
                         }}
@@ -328,27 +352,28 @@ const Page = () => {
                     <Link href="/service">View All</Link>
                 </div>
 
-                <div className="flex mt-3 gap-2 overflow-x-auto scrollbar-hide">
+                <div className="flex mt-3 gap-3 overflow-x-auto scrollbar-hide">
                     {services.map((service, i) => (
                         <div
                             key={i}
-                            className={`flex-shrink-0 ${
-                                i === 0
-                                    ? "ml-5"
-                                    : i === services.length - 1
-                                    ? "mr-5"
-                                    : ""
-                            } w-32 bg-[#F0F4E2] rounded-2xl`}
+                            className={`flex-shrink-0 
+                            ${i === 0 ? "ml-5" : i === services.length - 1 ? "mr-5" : ""}
+                                w-32 rounded-2xl flex flex-col justify-between 
+                                ${service.className}
+                            `}
                         >
-                            <div className="px-2 pt-2">
-                                <h3>{service.title}</h3>
-                            </div>
-                            <div className="relative h-36 mt-1">
+                            {/* Title */}
+                            <h3 className="text-lg font-medium text-gray-800 p-3 pb-0 leading-tight">
+                                {service.title}
+                            </h3>
+
+                            {/* Image */}
+                            <div className="relative flex flex-end items-end h-36 w-full">
                                 <Image
-                                    fill
                                     src={service.image}
                                     alt={service.title}
-                                    className="object-cover"
+                                    fill
+                                    className="object-cover w-full"
                                 />
                             </div>
                         </div>
@@ -370,7 +395,7 @@ const Page = () => {
                             {videos.map((video, i) => (
                                 <div
                                     key={i}
-                                    className={`flex-shrink-0 w-48 ${
+                                    className={`flex-shrink-0 w-44 ${
                                         i === 0
                                             ? "ml-5"
                                             : i === videos.length - 1
@@ -384,7 +409,7 @@ const Page = () => {
                                                 src={video.image}
                                                 fill
                                                 alt={video.title}
-                                                className="w-full h-full object-cover"
+                                                className="w-full rounded-2xl h-full object-cover"
                                             />
                                         </div>
                                     </div>
@@ -416,7 +441,7 @@ const Page = () => {
                     </Link>
                 </div>
 
-                <div className="flex overflow-x-auto mt-2 gap-2 scrollbar-hide pb-4">
+                <div className="flex overflow-x-auto mt-2 scrollbar-hide pb-4">
                     {beforeAfterCards.map((item, i) => (
                         <div
                             key={i}
@@ -426,21 +451,21 @@ const Page = () => {
                                     : i === beforeAfterCards.length - 1
                                     ? "mr-5"
                                     : ""
-                            } p-[10px] w-52 bg-white rounded-2xl shadow-xl`}
+                            } p-[10px] ml-2 w-[185px] bg-white rounded-2xl shadow-xl`}
                         >
-                            <div className="relative h-28 rounded-xl">
+                            <div className="relative h-20 rounded-xl">
                                 <Image
                                     fill
                                     src={item.image}
                                     alt={item.title}
-                                    className="object-cover rounded-2xl"
+                                    className="object-cover h-full w-full rounded-2xl"
                                 />
                             </div>
 
                             <h3 className="text-xl font-bold mt-2">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600 leading-0">
+                            <p className="text-gray-600 text-sm line-clamp-2 leading-none">
                                 {item.description}
                             </p>
 

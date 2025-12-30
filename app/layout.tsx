@@ -22,8 +22,8 @@ export default function RootLayout({
                 <div
                     className="flex flex-col relative md:rounded-3xl pb-4"
                     style={{
-                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 70%, #DFFAFE 100%)",
- height: "100vh",
+                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 75%, #DFFAFE 100%)",
+                        height: "100vh",
                     }}
                 >
                     <Header />

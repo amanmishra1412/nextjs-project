@@ -11,7 +11,7 @@ interface Field {
 }
 
 const Page = () => {
-    // Separate state for each field (industry standard for small forms)
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [gender, setGender] = useState("");
@@ -44,20 +44,16 @@ const Page = () => {
         e.preventDefault();
         const formData = { name, email, gender, dob };
         console.log("Form Data:", formData);
-        // You can send formData to API here
     };
 
     return (
         <>
-            {/* Background */}
             <div
                 className="h-screen md:rounded-3xl bg-cover bg-top bg-no-repeat"
                 style={{ backgroundImage: "url(/images/login.png)" }}
             />
 
-            {/* Form Card */}
             <div className="rounded-3xl absolute bottom-0 bg-[#ECFDFF] shadow-2xl px-5 py-5 w-full z-10">
-                {/* Logo */}
                 <div className="relative w-56 h-12 mb-2">
                     <Image
                         src="/images/logo.png"
@@ -127,7 +123,6 @@ const Page = () => {
                         />
                     </div>
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         className="w-full py-3 px-6 bg-gradient-to-b from-[#49E0F3] to-[#44B7C6] text-white font-normal text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-md border border-white/20 hover:border-white/40"

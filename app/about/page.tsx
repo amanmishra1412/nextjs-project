@@ -4,8 +4,10 @@ import React from "react";
 
 const page = () => {
     return (
-        <section className="pb-5 px-5">
-            <div className="p-[15px] bg-gradient-to-b from-[#E3F4F5] to-[#E6E8E0] rounded-xl border border-[#D9FBFF]">
+        <section className="pb-5">
+            <div className="px-5">
+
+            <div className="p-[15px]   bg-gradient-to-b from-[#E3F4F5] to-[#E6E8E0] rounded-xl border border-[#D9FBFF]">
                 <div className="w-20 h-20 relative rounded-lg">
                     <Image
                         fill
@@ -35,8 +37,9 @@ const page = () => {
                     fugiat laudantium nobis corporis,
                 </p>
             </div>
+            </div>
 
-            <div className="mt-2">
+            <div className="mt-2  px-5 bg-white">
                 <h2 className="text-xl font-semibold">Awards & Achievment</h2>
                 <p className="mt-3 text-gray-600">
                     <span className="text-gray-700 font-semibold ">

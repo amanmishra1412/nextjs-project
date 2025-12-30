@@ -21,7 +21,7 @@ const page = () => {
     return (
         <>
             <div className="px-5 pb-5">
-                <div className="">
+                <div className="mb-5">
                     {treatments.map((treatment, index) => (
                         <Link
                             key={index}
