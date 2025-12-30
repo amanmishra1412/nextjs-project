@@ -53,12 +53,14 @@ const Footer = () => {
         "/about",
         "/signup",
         "/login",
+        "/treatment_gallary",
     ];
-    if (pathname.startsWith("/premium") || removeRoute.includes(pathname)) return "";
+    if (pathname.startsWith("/premium") || removeRoute.includes(pathname))
+        return "";
 
     return (
-        <div className=" fixed self-end bottom-0  w-full max-w-[420px] z-30 px-3 bg-gradient-to-b rounded-3xl from-transparent to-[#D4F2F6]">
-            <footer className=" rounded-3xl bg-[#D4F2F6] border-[2px] border-white z-40">
+        <div className=" fixed self-end bottom-0 w-full max-w-[420px] z-40  bg-gradient-to-b rounded-3xl from-transparent to-[#D4F2F6]">
+            <footer className="px-3 rounded-3xl bg-[#D4F2F6] border-[2px] border-white z-40">
                 <div className="flex justify-around items-center h-16 max-w-md mx-auto">
                     {tabs.map((tab) => {
                         const isActive = pathname === tab.route;

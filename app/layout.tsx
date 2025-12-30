@@ -20,9 +20,9 @@ export default function RootLayout({
                 className={` antialiased mx-auto w-full md:bg-black md:max-w-[420px] font-noto-sans`}
             >
                 <div
-                    className="flex flex-col relative md:rounded-3xl pb-4"
+                    className="flex flex-col relative md:rounded-3xl pb-1"
                     style={{
-                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 45%, #FFFFFF 75%, #DFFAFE 100%)",
+                        background: "linear-gradient(to bottom, #D3EFF3 0%, #FFFFFF 40%, #FFFFFF 75%, #DFFAFE 100%)",
                         height: "100vh",
                     }}
                 >

@@ -39,7 +39,6 @@ const Page = () => {
         },
     ];
 
-    // Function to handle submit
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const formData = { name, email, gender, dob };

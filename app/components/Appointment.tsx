@@ -13,12 +13,12 @@ const Appointment = ({ valueAppoint }: Props) => {
     return (
         <>
             <div
-                className="absolute inset-0 bg-gray-500 backdrop-blur-xl bg-opacity-10 z-50"
+                className="absolute inset-0 rounded-3xl bg-gray-500 backdrop-blur-xl bg-opacity-10 z-50"
                 onClick={() => {
                     valueAppoint(false);
                 }}
             />
-            <div className="absolute w-full z-50 bottom-0 flex items-center justify-center">
+            <div className="absolute w-full rounded-3xl z-50 bottom-0 flex items-center justify-center">
                 <div className="relative w-full max-w-md p-5 backdrop-blur-xl bg-gradient-to-t from-white to-[#E4FCFF] border-[2px] border-white shadow-2xl rounded-3xl">
                     <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-b from-white/10 to-transparent rounded-[inherit] -z-10"></div>
 

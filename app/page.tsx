@@ -83,7 +83,7 @@ const Page = () => {
     const socialLinks: SocialLink[] = [
         {
             name: "Facebook",
-            icon: "ri-facebook-line",
+            icon: "ri-facebook-fill",
             className: "bg-[#C5E3F6] text-blue-600",
         },
         {
@@ -202,7 +202,7 @@ const Page = () => {
                             <div className="bg-white shrink-0 flex items-center justify-center relative rounded-xl shadow-sm cursor-pointer w-10 h-10 text-xl text-black">
                                 <i className={`${item.icon} text-[#8ECAD2]`} />
                             </div>
-                            <p className=" font-semibold  text-start">
+                            <p className=" font-semibold text-gray-800  text-start">
                                 {item.title}
                                 {item.subtitle && (
                                     <>
@@ -219,7 +219,7 @@ const Page = () => {
             {/* premium service */}
 
             <section className="pb-5">
-                <h2 className="font-semibold px-5">
+                <h2 className="font-semibold text-gray-900 px-5">
                     Premium Services
                     <span className="text-yellow-500 text-lg">✨</span>
                 </h2>
@@ -349,7 +349,7 @@ const Page = () => {
                     <h2 className="font-semibold text-lg">
                         Our Services <span className="text-yellow-500">✨</span>
                     </h2>
-                    <Link href="/service">View All</Link>
+                    <Link href="/service" className="text-gray-600">View All</Link>
                 </div>
 
                 <div className="flex mt-3 gap-3 overflow-x-auto scrollbar-hide">
@@ -358,12 +358,12 @@ const Page = () => {
                             key={i}
                             className={`flex-shrink-0 
                             ${i === 0 ? "ml-5" : i === services.length - 1 ? "mr-5" : ""}
-                                w-32 rounded-2xl flex flex-col justify-between 
+                                w-[7.8rem] rounded-2xl flex flex-col justify-between 
                                 ${service.className}
                             `}
                         >
                             {/* Title */}
-                            <h3 className="text-lg font-medium text-gray-800 p-3 pb-0 leading-tight">
+                            <h3 className="text-lg font-medium text-gray-800 p-3 pt-4 pb-0 leading-tight">
                                 {service.title}
                             </h3>
 
@@ -451,7 +451,7 @@ const Page = () => {
                                     : i === beforeAfterCards.length - 1
                                     ? "mr-5"
                                     : ""
-                            } p-[10px] ml-2 w-[185px] bg-white rounded-2xl shadow-xl`}
+                            } p-[10px] ml-2 w-[183px] bg-white rounded-2xl shadow-xl`}
                         >
                             <div className="relative h-20 rounded-xl">
                                 <Image

@@ -62,7 +62,6 @@ export default function TreatmentsList() {
                             key={index}
                             className="flex items-center justify-between bg-white rounded-2xl shadow-md "
                         >
-                            {/* Text Section */}
                             <div className="flex-1 pr-4 pt-[12px] pb-4 pl-4">
                                 <h2 className="text-xl font-semibold">
                                     {treatment.title}
@@ -72,7 +71,6 @@ export default function TreatmentsList() {
                                 </p>
                             </div>
 
-                            {/* Image Section */}
                             <div className="w-28 h-36 rounded-2xl relative flex-shrink-0">
                                 <Image
                                     src={treatment.imageSrc}

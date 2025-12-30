@@ -93,7 +93,7 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className="flex-1 mb-8 px-4 overflow-y-auto scrollbar-hide">
+                        <div className="flex-1 mb-16 px-4 overflow-y-auto scrollbar-hide">
                             {menuItems.map((item, idx) => (
                                 <Link
                                     key={idx}
